@@ -1,0 +1,6 @@
+17.102.01.0920	Fizik-101	Fizik
+17.102.01.0920	mat101	Mat
+17.102.01.0920	MAT-101	MAt
+154	kimya101	kimya
+17.01.01.004	MAT-123	LineerCebir
+17.01.01.003	MAT-123	LineerCebir

@@ -1,0 +1,6 @@
+17.01.01.004	BLM-101	BilgMuhGiris
+17.01.01.004	MAT-123	LineerCebir
+17.01.01.004	BLM-103	Programlama
+17.01.01.004	MAT-123	LineerCebir
+17.01.01.004	BLM-101	BilgMuhGiris
+17.01.01.001	MAT-123	LineerCebir
