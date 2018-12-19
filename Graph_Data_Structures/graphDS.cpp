@@ -1,6 +1,7 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+#include <conio.h>
 
 struct node{
     int data;
@@ -198,9 +199,7 @@ void createAdjacencyList(int nodeCount, int edgeCount){
     struct Graph * gT = gHead;
 
     for(int i = 0; i < nodeCount; i++){
-        int connectionCount = (rand()%edgeCount);
-        printf("\n%d. Current Edge Count = %d \t Current connectionCount = %d",i, edgeCount, connectionCount);
-        
+        int connectionCount = (rand()%edgeCount);        
         
         for(int j = 0; j < connectionCount; j++){
             if(i != j){
@@ -219,7 +218,7 @@ void createAdjacencyList(int nodeCount, int edgeCount){
 }
 
 void createGraph(){
-    int nodeCount = 5, edgeCount = 7, method = 2;
+    int nodeCount, edgeCount, method;
     
     printf("Node Count: ");
     scanf("%d", &nodeCount);
@@ -240,9 +239,62 @@ void createGraph(){
     }
 }
 
-int main()  {
-    createGraph();
+void findUniversalSinkInGraph(struct Graph * gTemp){
+    if(!gTemp)  return;
+    if(!gTemp->v){
+           printf("Sink Found at %d\n", gTemp->gNumber); 
+    }
+
+    findUniversalSinkInGraph(gTemp->next);
+
+}
+
+void navigaiton(int iNumber){
     
+    switch(iNumber){
+        case 1:
+            AdjacencyMatrix();
+            break;
+        case 2:
+            AdjacencyList();
+            listFullAdjacencyList();
+            break;
+        case 3:
+            createGraph();
+            break;
+        case 4:
+            findUniversalSinkInGraph(gHead);
+            break;
+        case 5:
+            exit(0);
+            break;        
+    }
+}
+
+void mainMenu(){
+    int iNumber;
+
+    printf("1-) Adjacency Matrix Read From File\n");
+    printf("2-) Adjacency List Read From File\n");
+    printf("3-) Randomly Create Adjacency\n");
+    printf("4-) Find Universal Sink\n");
+    printf("5-) Exit\n");
+    scanf("%d", &iNumber);
+    
+    navigaiton(iNumber);
+
+}
+
+
+int main()  {
+    while(1){
+        system("cls");
+        mainMenu();
+
+        printf("\n\nPress Any Key To Continue...");
+        
+        getch();
+    }
     
     return 0;
 }
